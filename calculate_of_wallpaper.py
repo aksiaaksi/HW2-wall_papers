@@ -1,12 +1,3 @@
-
-# lenght_room =  длина комнаты
-# wiпgth_room =  ширина комнаты
-# lenght_wallpaper = длина рулона
-# wight_wallpaper = ширина рулона
-# lenght_raport = рапорт
-# room_height =  высота комнаты
-
-
 def calculate(lenght_room,wigth_room,lenght_wallpaper,wight_wallpaper,lenght_raport,room_height):
 
     """
@@ -19,11 +10,11 @@ def calculate(lenght_room,wigth_room,lenght_wallpaper,wight_wallpaper,lenght_rap
     >>> calculate(2,2,10,1.06,0.32,2)#doctest:+ELLIPSIS
     1.82...
     """
-
+    f = 0.1 #  safety factor
     perimetr = (lenght_room + wigth_room) * 2
 
-    wallpaper_stripes = lenght_wallpaper / (lenght_raport + room_height + 0.1) #число полос
+    wallpaper_stripes = lenght_wallpaper / (lenght_raport + room_height + f )
 
-    number_rolls = (perimetr / wight_wallpaper) / wallpaper_stripes #число руллонов
+    number_rolls = (perimetr / wight_wallpaper) / wallpaper_stripes
 
     return number_rolls
